@@ -19,8 +19,13 @@ while votes < voters:
 winner_dict = {}
 for i in range(len(selections)):
     winner_dict[count_list[i]] = count_list.count(count_list[i])
-    print(count_list.count(count_list[i]), f"votes for {count_list[i]}")
 
 
 max_key = max(winner_dict, key=winner_dict.get)
-print(f"{max_key} is the winner!")
+print(f"{max_key} is the winner with {winner_dict[max_key]} votes!")
+
+complete_results = input("would you like to view complete voting results?y/n: ")
+if complete_results == "y":
+    print(results)
+else:
+    print("thanks for voting, Goodbye!")
